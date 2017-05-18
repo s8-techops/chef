@@ -9,5 +9,6 @@ run_list(
           "recipe[protobuf]",
           "recipe[ntp_master]",
           "recipe[scribe]",
-          "recipe[rpms_repo]"
+          "recipe[rpms_repo]",
+          "recipe[final]"
         )

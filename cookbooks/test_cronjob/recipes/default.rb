@@ -10,9 +10,21 @@ file '/root/setup.sh' do
   action :create
 end
 
-
 cron 'setup' do
   minute '*/30'
   command '/root/setup.sh > /tmp/setup.log 2>&1'
   action :create
+end
+
+service 'autofs' do
+  action [:enable, :start]
+end
+
+file '/etc/resolv.conf_bak' do
+  content IO.read('/etc/resolv.conf')
+  action :create
+end
+
+execute 'switch_db_default' do
+  command '/usr/local/bin/switch_db default'
 end
