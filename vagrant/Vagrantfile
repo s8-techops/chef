@@ -1,0 +1,26 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "centos/storm8"
+  config.vm.box_url = "http://rpms.sv4.prod.storm8.com/vagrant_images/localqa.box"
+
+  config.ssh.insert_key = false
+  config.ssh.username = "root"
+
+  config.vm.define "localqa" do |localqa|
+  end
+
+  config.vm.network "forwarded_port", guest: 80, guest_ip: "10.0.2.250", host: 80, host_ip: "0.0.0.0"
+  config.vm.network "forwarded_port", guest: 443, guest_ip: "10.0.2.250", host: 443, host_ip: "0.0.0.0"
+  config.vm.network "private_network", ip: "192.168.56.102"
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.name = "localqa"
+    vb.memory = "1024"
+    vb.cpus = 1
+  end
+
+  config.vm.provision "shell",
+    path: "./scripts/setup.sh"
+end
