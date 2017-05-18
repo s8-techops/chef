@@ -2,6 +2,7 @@ To get it start,
 
 1. Install VirtualBox
 2. Install vagrant
-3. cd vagrant
-4. vagrant up
-5. vagrant ssh
+3. git clone https://github.com/techops-storm8/chef.git
+4. cd vagrant
+5. vagrant up
+6. vagrant ssh
