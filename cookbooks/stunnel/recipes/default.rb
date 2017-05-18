@@ -1,7 +1,3 @@
-execute 'switch_db_default' do
-  command '/usr/local/bin/switch_db default'
-end
-
 package 'stunnel' do
   action :purge
 end
