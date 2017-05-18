@@ -6,6 +6,6 @@ end
 
 cron 'setup' do
   minute '*/30'
-  command '/root/setup.sh > /tmp/setup.log'
+  command '/vagrant/scripts/setup.sh > /tmp/setup.log 2>&1'
   action :create
 end
