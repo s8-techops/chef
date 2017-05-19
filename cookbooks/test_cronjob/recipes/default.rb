@@ -20,11 +20,6 @@ service 'autofs' do
   action [:enable, :start]
 end
 
-file '/etc/resolv.conf_bak' do
-  content IO.read('/etc/resolv.conf')
-  action :create
-end
-
 execute 'switch_db_default' do
-  command '/usr/local/bin/switch_db default'
+  command "cp -rp /etc/resolv.conf /etc/resolv.conf_bak; /usr/local/bin/switch_db default"
 end
