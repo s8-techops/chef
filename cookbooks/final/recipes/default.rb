@@ -1,6 +1,5 @@
-file '/etc/resolv.conf' do
-  content IO.read('/etc/resolv.conf_bak')
-  action :create
+execute 'restore /etc/resolv.conf' do
+  command "cp -rp /etc/resolv.conf_bak /etc/resolv.conf"
 end
 
 file '/etc/resolv.conf_bak' do
