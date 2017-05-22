@@ -3,7 +3,7 @@
 
 Vagrant.configure("2") do |config|
   config.vm.box = "centos/storm8"
-  config.vm.box_url = "http://rpms.sv4.prod.storm8.com/vagrant_images/localqa.box"
+  config.vm.box_url = "http://shared.storm8.com/Software/virtual-box/local_qa/vagrant_images/localqa.box"
 
   config.ssh.insert_key = false
   config.ssh.username = "root"
