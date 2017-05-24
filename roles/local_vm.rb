@@ -7,6 +7,7 @@ run_list(
           "recipe[git_210]",
           "recipe[php_ini]",
           "recipe[protobuf]",
+          "recipe[phpunit]",
           "recipe[ntp_master]",
           "recipe[scribe]",
           "recipe[rpms_repo]",
