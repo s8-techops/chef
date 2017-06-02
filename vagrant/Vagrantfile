@@ -11,8 +11,6 @@ Vagrant.configure("2") do |config|
   config.vm.define "localqa" do |localqa|
   end
 
-  config.vm.network "forwarded_port", guest: 80, guest_ip: "10.0.2.250", host: 80, host_ip: "0.0.0.0"
-  config.vm.network "forwarded_port", guest: 443, guest_ip: "10.0.2.250", host: 443, host_ip: "0.0.0.0"
   config.vm.network "private_network", ip: "192.168.56.102"
 
   config.vm.provider "virtualbox" do |vb|
