@@ -12,7 +12,6 @@ remote_file '/etc/httpd/ssl/me.corp.storm8.com.crt' do
   group 'root'
   mode '0644'
   action :create
-  notifies :restart, 'service[httpd]', :immediately
 end
 
 remote_file '/etc/httpd/ssl/gd_bundle.crt' do
@@ -21,7 +20,6 @@ remote_file '/etc/httpd/ssl/gd_bundle.crt' do
   group 'root'
   mode '0644'
   action :create
-  notifies :restart, 'service[httpd]', :immediately
 end
 
 remote_file '/etc/httpd/ssl/storm8.com.key' do
@@ -30,7 +28,6 @@ remote_file '/etc/httpd/ssl/storm8.com.key' do
   group 'root'
   mode '0400'
   action :create
-  notifies :restart, 'service[httpd]', :immediately
 end
 
 remote_file '/etc/stunnel/httpd_storm8.com' do
