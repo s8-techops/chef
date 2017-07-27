@@ -12,7 +12,7 @@ vagrant plugin install vagrant-vbguest
 3. Create a folder, for example: local-vm and clone chef
 ```
 cd local-vm
-git clone https://github.com/techops-storm8/chef.git
+git clone https://github.com/s8-techops/chef.git
 ```
 
 4. cd chef/vagrant
