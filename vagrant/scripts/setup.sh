@@ -27,7 +27,7 @@ fi
 if [ ! -d /root/chef ]
 then
   cd /root
-  git clone https://github.com/techops-storm8/chef.git
+  git clone https://github.com/s8-techops/chef.git
 else
   cd /root/chef
   git pull
